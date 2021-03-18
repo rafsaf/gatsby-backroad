@@ -30,7 +30,6 @@
   z-index: -10;
 }
 .btn:hover {
-  position: relative;
   color: rgb(73, 72, 72);
   background: rgba(100, 217, 228, 0.7);
 }

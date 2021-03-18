@@ -1,0 +1,54 @@
+.section {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 5rem 0;
+  max-width: 1178px;
+}
+.bg {
+  background: hsl(0, 0%, 91%);
+}
+.sectionTitle {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.sectionTitle span {
+  color: rgba(34, 127, 136, 0.7);
+  text-transform: uppercase;
+}
+.sectionTitle h2 {
+  text-transform: uppercase;
+}
+.icon {
+  font-size: 4rem;
+  background: rgb(58, 165, 168);
+  padding: 1rem;
+}
+.serviceIcon,
+.serviceInfo {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.service {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .servicesCenter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .service {
+    flex: 0 0 calc(50% - 2rem);
+  }
+}
+@media screen and (min-width: 1170px) {
+  .service {
+    flex: 0 0 calc(33.3% - 2rem);
+    display: flex;
+  }
+  .serviceInfo {
+    flex-grow: 1;
+    text-align: left;
+    padding: 0 1rem;
+  }
+}

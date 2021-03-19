@@ -11,63 +11,63 @@ const Icons = [
   { icon: <FaDiscord className={styles.navIcon} /> },
 ]
 
-const Links = ({ setToggle }) => {
+const Links = ({ toggleLink }) => {
   return (
     <ul className={styles.links}>
       <li>
-        <a
+        <button
           onClick={() => {
+            toggleLink()
             scrollTo("#nav")
-            setToggle(false)
           }}
           className={styles.btn}
         >
           Home
-        </a>
+        </button>
       </li>
       <li>
-        <a
+        <button
           onClick={() => {
+            toggleLink()
             scrollTo("#about")
-            setToggle(false)
           }}
           className={styles.btn}
         >
           About
-        </a>
+        </button>
       </li>
       <li>
-        <a
+        <button
           onClick={() => {
+            toggleLink()
             scrollTo("#services")
-            setToggle(false)
           }}
           className={styles.btn}
         >
           Services
-        </a>
+        </button>
       </li>
       <li>
-        <a
+        <button
           onClick={() => {
+            toggleLink()
             scrollTo("#featured")
-            setToggle(false)
           }}
           className={styles.btn}
         >
           Featured
-        </a>
+        </button>
       </li>
       <li>
-        <a
+        <button
           onClick={() => {
+            toggleLink()
             scrollTo("#gallery")
-            setToggle(false)
           }}
           className={styles.btn}
         >
           Gallery
-        </a>
+        </button>
       </li>
     </ul>
   )
@@ -75,6 +75,9 @@ const Links = ({ setToggle }) => {
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
+  const toggleLink = () => {
+    setToggle(false)
+  }
   return (
     <div className={styles.bg}>
       <nav className={styles.nav}>
@@ -91,11 +94,15 @@ const Navbar = () => {
             <GiHamburgerMenu className={styles.toggle} />
           </button>
         </div>
-        {toggle ? <Links setToggle={setToggle} /> : null}
+        {toggle ? <Links toggleLink={toggleLink} /> : null}
         <div className={styles.navLinks}>
           <Links />
         </div>
-        <div className={styles.icons}>{Icons.map((item) => item.icon)}</div>
+        <div className={styles.icons}>
+          {Icons.map((item) => (
+            <a href="https://www.facebook.com/">{item.icon}</a>
+          ))}
+        </div>
       </nav>
     </div>
   )

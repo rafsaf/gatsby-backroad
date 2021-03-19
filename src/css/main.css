@@ -19,6 +19,12 @@ body {
 a {
   text-decoration: none;
 }
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-weight: 400;
+}
 img {
   width: 100%;
   display: block;

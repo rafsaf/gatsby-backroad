@@ -89,7 +89,7 @@ const Tour = ({ title, image, text, country, days, price, date }) => {
         <p>{text}</p>
         <div className={styles.cardFooter}>
           <p>
-            <Icon className={styles.icon} /> {country}
+            <Icon /> {country}
           </p>
           <p> {price}</p>
         </div>

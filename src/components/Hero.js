@@ -20,9 +20,9 @@ const Hero = () => {
           vel pretium mauris. In vel congue odio. Pellentesque vitae vehicula
           dolor, vel molestie sapien.
         </p>
-        <a className={styles.btn} onClick={() => scrollTo("#featured")}>
+        <button className={styles.btn} onClick={() => scrollTo("#featured")}>
           explore tours
-        </a>
+        </button>
       </div>
     </div>
   )

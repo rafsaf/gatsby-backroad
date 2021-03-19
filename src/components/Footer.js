@@ -13,29 +13,29 @@ const Links = () => {
   return (
     <ul className={styles.links}>
       <li>
-        <a onClick={() => scrollTo("#nav")} className={styles.btn}>
+        <button onClick={() => scrollTo("#nav")} className={styles.btn}>
           Home
-        </a>
+        </button>
       </li>
       <li>
-        <a onClick={() => scrollTo("#about")} className={styles.btn}>
+        <button onClick={() => scrollTo("#about")} className={styles.btn}>
           About
-        </a>
+        </button>
       </li>
       <li>
-        <a onClick={() => scrollTo("#services")} className={styles.btn}>
+        <button onClick={() => scrollTo("#services")} className={styles.btn}>
           Services
-        </a>
+        </button>
       </li>
       <li>
-        <a onClick={() => scrollTo("#featured")} className={styles.btn}>
+        <button onClick={() => scrollTo("#featured")} className={styles.btn}>
           Featured
-        </a>
+        </button>
       </li>
       <li>
-        <a onClick={() => scrollTo("#gallery")} className={styles.btn}>
+        <button onClick={() => scrollTo("#gallery")} className={styles.btn}>
           Gallery
-        </a>
+        </button>
       </li>
     </ul>
   )

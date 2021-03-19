@@ -9,6 +9,7 @@ const Hero = () => {
       <StaticImage
         src="../images/main.jpg"
         alt=""
+        placeholder="blurred"
         layout="fullWidth"
         className={styles.heroImage}
       />

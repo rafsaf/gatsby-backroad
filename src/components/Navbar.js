@@ -79,7 +79,11 @@ const Navbar = () => {
     <div className={styles.bg}>
       <nav className={styles.nav}>
         <div className={styles.navLogo}>
-          <StaticImage src="../images/logo.svg" />
+          <StaticImage
+            src="../images/logo.svg"
+            placeholder="blurred"
+            alt="logo"
+          />
           <button
             className={styles.toggleBtn}
             onClick={() => setToggle(!toggle)}

@@ -12,7 +12,12 @@ const About = () => {
       </div>
       <div className={styles.aboutCenter}>
         <div className={styles.aboutImage}>
-          <StaticImage src="../images/about.jpeg" layout="fullWidth" alt="" />
+          <StaticImage
+            src="../images/about.jpeg"
+            layout="fullWidth"
+            alt=""
+            placeholder="blurred"
+          />
         </div>
         <article className={styles.aboutInfo}>
           <h3>explore the diffrence</h3>

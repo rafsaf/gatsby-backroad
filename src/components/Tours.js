@@ -11,6 +11,7 @@ const tourData = [
         src="../images/tour-1.jpeg"
         className={styles.image}
         layout="fullWidth"
+        placeholder="blurred"
       />
     ),
     text:
@@ -27,6 +28,7 @@ const tourData = [
         src="../images/tour-2.jpeg"
         className={styles.image}
         layout="fullWidth"
+        placeholder="blurred"
       />
     ),
     text:
@@ -43,6 +45,7 @@ const tourData = [
         src="../images/tour-3.jpeg"
         className={styles.image}
         layout="fullWidth"
+        placeholder="blurred"
       />
     ),
     text:
@@ -59,6 +62,7 @@ const tourData = [
         src="../images/tour-4.jpeg"
         className={styles.image}
         layout="fullWidth"
+        placeholder="blurred"
       />
     ),
     text:

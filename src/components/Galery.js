@@ -10,6 +10,7 @@ const images = [
         src="../images/tour-1.jpeg"
         layout="fullWidth"
         className={styles.image}
+        placeholder="blurred"
       />
     ),
   },
@@ -19,6 +20,7 @@ const images = [
         src="../images/tour-2.jpeg"
         layout="fullWidth"
         className={styles.image}
+        placeholder="blurred"
       />
     ),
   },
@@ -28,6 +30,7 @@ const images = [
         src="../images/tour-3.jpeg"
         layout="fullWidth"
         className={styles.image}
+        placeholder="blurred"
       />
     ),
   },
@@ -37,6 +40,7 @@ const images = [
         src="../images/tour-4.jpeg"
         layout="fullWidth"
         className={styles.image}
+        placeholder="blurred"
       />
     ),
   },
@@ -46,6 +50,7 @@ const images = [
         src="../images/tour-5.jpeg"
         layout="fullWidth"
         className={styles.image}
+        placeholder="blurred"
       />
     ),
   },
@@ -55,6 +60,7 @@ const images = [
         src="../images/tour-6.jpeg"
         layout="fullWidth"
         className={styles.image}
+        placeholder="blurred"
       />
     ),
   },
@@ -64,6 +70,7 @@ const images = [
         src="../images/tour-1.jpeg"
         layout="fullWidth"
         className={styles.image}
+        placeholder="blurred"
       />
     ),
   },
@@ -73,6 +80,7 @@ const images = [
         src="../images/tour-2.jpeg"
         layout="fullWidth"
         className={styles.image}
+        placeholder="blurred"
       />
     ),
   },

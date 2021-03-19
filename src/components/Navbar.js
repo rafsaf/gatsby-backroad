@@ -81,7 +81,7 @@ const Navbar = () => {
         <div className={styles.navLogo}>
           <StaticImage
             src="../images/logo.svg"
-            placeholder="blurred"
+            placeholder="tracedSVG"
             alt="logo"
           />
           <button

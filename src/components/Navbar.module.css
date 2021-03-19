@@ -1,0 +1,95 @@
+.bg {
+  position: fixed;
+  z-index: 200;
+  background: white;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+.nav {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.btn {
+  padding: 0.7rem 0rem;
+  font-size: 1.3rem;
+  width: 100%;
+  text-transform: capitalize;
+  letter-spacing: 0.25rem;
+  display: inline-block;
+  font-weight: 500;
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+.btn:hover {
+  color: rgb(47, 192, 202);
+}
+.toggleBtn {
+  background: transparent;
+  text-transform: capitalize;
+  letter-spacing: 0.25rem;
+  display: inline-block;
+  font-weight: 500;
+  transition: 0.3s linear;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.toggleBtn:hover .toggle {
+  color: rgb(47, 166, 175);
+  transform: scale(1.2);
+}
+.links {
+  margin-bottom: 1rem;
+}
+.toggle {
+  color: rgb(78, 203, 241);
+  font-size: 2rem;
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+.navLogo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.navLinks {
+  display: none;
+}
+.icons {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .navLogo,
+  .navLinks,
+  .icons {
+    display: block;
+  }
+  .toggleBtn {
+    display: none;
+  }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  .btn {
+    width: auto;
+    padding-left: 1rem;
+    font-size: 1rem;
+  }
+  .navIcon {
+    font-size: 1.2rem;
+    margin: 0 0.3rem;
+    color: rgb(72, 185, 219);
+  }
+}

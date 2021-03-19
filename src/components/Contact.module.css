@@ -1,0 +1,59 @@
+.bg {
+  background: rgb(61, 183, 194);
+}
+.section {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 4rem 0;
+  max-width: 1178px;
+}
+.sectionTitle {
+  margin-bottom: 4rem;
+  color: white;
+}
+.sectionTitle p {
+  color: rgb(218, 241, 248);
+}
+.formControl {
+  flex-grow: 1;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  border: transparent;
+  color: rgb(92, 91, 91);
+  outline: none;
+}
+.btn {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  background: rgb(146, 230, 240);
+  border: transparent;
+  text-transform: capitalize;
+  color: rgb(92, 91, 91);
+  letter-spacing: 0.3rem;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.btn:hover {
+  color: rgb(223, 243, 246);
+  background: teal;
+}
+
+.contactForm {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 992px) {
+  .section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sectionTitle,
+  .contactForm {
+    flex: 0 1 calc(50% - 2rem);
+    margin-bottom: 0;
+  }
+}

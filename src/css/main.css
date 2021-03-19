@@ -49,7 +49,9 @@ h4 {
 p {
   margin-bottom: 1.25rem;
 }
-
+ul {
+  list-style: none;
+}
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;

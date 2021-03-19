@@ -34,7 +34,7 @@ const Service = ({ icon, title, text }) => {
 
 const Services = () => {
   return (
-    <div className={styles.bg}>
+    <div id="services" className={styles.bg}>
       <section className={styles.section}>
         <div className={styles.sectionTitle}>
           <h2>

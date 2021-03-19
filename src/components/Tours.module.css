@@ -1,0 +1,82 @@
+.section {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 4rem 0;
+  max-width: 1178px;
+}
+.bg {
+  background: hsl(0, 0%, 91%);
+}
+.sectionTitle {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.sectionTitle span {
+  color: rgba(34, 127, 136, 0.7);
+  text-transform: uppercase;
+}
+.sectionTitle h2 {
+  text-transform: uppercase;
+}
+.image {
+  height: 15rem;
+}
+.card {
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+.cardImage {
+  position: relative;
+}
+.date {
+  position: absolute;
+  right: 0;
+  background: rgb(78, 218, 223);
+  bottom: 0;
+  padding: 0.3rem 0.8rem;
+  color: rgb(47, 45, 45);
+}
+.bg {
+  background: hsl(0, 0%, 91%);
+  padding: 1rem 1rem;
+}
+.cardTitle {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.cardTitle p {
+  color: rgb(155, 151, 151);
+}
+.cardFooter p {
+  color: rgb(46, 131, 134);
+  letter-spacing: 0.2rem;
+}
+@media screen and (min-width: 768px) {
+  .tours {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .card {
+    flex: 0 0 calc(50% - 2rem);
+  }
+}
+@media screen and (min-width: 992px) {
+  .card {
+    flex: 0 0 calc(33.3% - 2rem);
+  }
+}

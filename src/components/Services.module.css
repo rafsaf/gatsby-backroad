@@ -1,7 +1,7 @@
 .section {
   width: 90vw;
   margin: 0 auto;
-  padding: 5rem 0;
+  padding: 4rem 0;
   max-width: 1178px;
 }
 .bg {
@@ -45,6 +45,7 @@
   .service {
     flex: 0 0 calc(33.3% - 2rem);
     display: flex;
+    margin-bottom: 0;
   }
   .serviceInfo {
     flex-grow: 1;

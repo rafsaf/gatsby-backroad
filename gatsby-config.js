@@ -4,6 +4,7 @@ module.exports = {
     siteUrl: "https://rafsaf-gatsby-backroad.netlify.app/",
   },
   plugins: [
+    "gatsby-plugin-smoothscroll",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",

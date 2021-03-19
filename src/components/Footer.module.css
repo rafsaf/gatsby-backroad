@@ -42,6 +42,7 @@
   font-weight: 500;
   transition: 0.3s linear;
   cursor: pointer;
+  color: rgb(255, 255, 255);
 }
 .btn:hover {
   color: rgb(47, 192, 202);

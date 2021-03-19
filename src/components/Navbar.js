@@ -15,57 +15,27 @@ const Links = ({ toggleLink }) => {
   return (
     <ul className={styles.links}>
       <li>
-        <button
-          onClick={() => {
-            toggleLink()
-            scrollTo("#nav")
-          }}
-          className={styles.btn}
-        >
+        <button value={"#nav"} onClick={toggleLink} className={styles.btn}>
           Home
         </button>
       </li>
       <li>
-        <button
-          onClick={() => {
-            toggleLink()
-            scrollTo("#about")
-          }}
-          className={styles.btn}
-        >
+        <button value={"#about"} onClick={toggleLink} className={styles.btn}>
           About
         </button>
       </li>
       <li>
-        <button
-          onClick={() => {
-            toggleLink()
-            scrollTo("#services")
-          }}
-          className={styles.btn}
-        >
+        <button value={"#services"} onClick={toggleLink} className={styles.btn}>
           Services
         </button>
       </li>
       <li>
-        <button
-          onClick={() => {
-            toggleLink()
-            scrollTo("#featured")
-          }}
-          className={styles.btn}
-        >
+        <button value={"#featured"} onClick={toggleLink} className={styles.btn}>
           Featured
         </button>
       </li>
       <li>
-        <button
-          onClick={() => {
-            toggleLink()
-            scrollTo("#gallery")
-          }}
-          className={styles.btn}
-        >
+        <button value={"#gallery"} onClick={toggleLink} className={styles.btn}>
           Gallery
         </button>
       </li>
@@ -75,8 +45,9 @@ const Links = ({ toggleLink }) => {
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
-  const toggleLink = () => {
+  const toggleLink = (e) => {
     setToggle(false)
+    scrollTo(e.target.value)
   }
   return (
     <div className={styles.bg}>
@@ -96,7 +67,7 @@ const Navbar = () => {
         </div>
         {toggle ? <Links toggleLink={toggleLink} /> : null}
         <div className={styles.navLinks}>
-          <Links />
+          <Links toggleLink={toggleLink} />
         </div>
         <div className={styles.icons}>
           {Icons.map((item) => (

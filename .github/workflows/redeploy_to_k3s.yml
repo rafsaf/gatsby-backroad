@@ -1,0 +1,21 @@
+name: Redeploy image on k3s cluster
+
+on:
+  workflow_run:
+    workflows: ["Push docker image to registry"]
+    branches: [main]
+    types:
+      - completed
+
+jobs:
+  deploy_to_k3s_on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Force existing deployment to download latest image
+        uses: steebchen/kubectl@v2.0.0
+        with:
+          config: ${{ secrets.KUBECONFIG }}
+          command: rollout restart deployment gatsby-backroad -n small-projects

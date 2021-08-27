@@ -1,0 +1,27 @@
+name: Docker
+
+on:
+  push:
+    branches:
+      - master
+      - push_to_k3s
+  env:
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build image
+        run: |
+          docker build . --file Dockerfile --tag rafsaf/gatsby-backroad:latest
+
+      - name: Log into registry
+        run: |
+          docker login https://registry.rafsaf.pl -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
+
+      - name: Push image
+        run: |
+          docker image tag rafsaf/gatsby-backroad:latest https://registry.rafsaf.pl/rafsaf/gatsby-backroad:latest
+          docker image push https://registry.rafsaf.pl/rafsaf/gatsby-backroad:latest

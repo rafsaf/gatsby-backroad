@@ -1,11 +1,9 @@
-name: Docker
+name: Push docker image to registry
 
 on:
   push:
     branches:
-      - master
-      - push_to_k3s
-
+      - main
 jobs:
   push:
     runs-on: ubuntu-latest
@@ -18,9 +16,10 @@ jobs:
 
       - name: Log into registry
         run: |
-          docker login https://registry.rafsaf.pl -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
+          echo "${{ secrets.DOCKER_PASS }}" | docker login https://registry.rafsaf.pl \
+           -u ${{ secrets.DOCKER_USER }} --password-stdin
 
       - name: Push image
         run: |
-          docker image tag rafsaf/gatsby-backroad:latest https://registry.rafsaf.pl/rafsaf/gatsby-backroad:latest
-          docker image push https://registry.rafsaf.pl/rafsaf/gatsby-backroad:latest
+          docker image tag rafsaf/gatsby-backroad:latest registry.rafsaf.pl/rafsaf/gatsby-backroad:latest
+          docker image push registry.rafsaf.pl/rafsaf/gatsby-backroad:latest

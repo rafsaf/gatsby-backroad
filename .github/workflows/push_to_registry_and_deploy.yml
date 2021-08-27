@@ -1,0 +1,36 @@
+name: Push docker image to registry
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  push_image_to_registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build image
+        run: |
+          docker build . --file Dockerfile --tag rafsaf/gatsby-backroad:latest
+
+      - name: Log into registry
+        run: |
+          echo "${{ secrets.DOCKER_PASS }}" | docker login https://registry.rafsaf.pl \
+           -u ${{ secrets.DOCKER_USER }} --password-stdin
+
+      - name: Push image
+        run: |
+          docker image tag rafsaf/gatsby-backroad:latest registry.rafsaf.pl/rafsaf/gatsby-backroad:latest
+          docker image push registry.rafsaf.pl/rafsaf/gatsby-backroad:latest
+
+  deploy_to_k3s:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Force existing deployment to download latest image
+        uses: steebchen/kubectl@v2.0.0
+        with:
+          config: ${{ secrets.KUBECONFIG }}
+          command: rollout restart deployment gatsby-backroad -n small-projects

@@ -1,0 +1,66 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: small-projects
+  labels:
+    name: small-projects
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: gatsby-backroad
+  namespace: small-projects
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gatsby-backroad
+  template:
+    metadata:
+      labels:
+        app: gatsby-backroad
+    spec:
+      containers:
+        - name: gatsby-backroad
+          image: registry.rafsaf.pl/rafsaf/gatsby-backroad:latest
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gatsby-backroad
+  labels:
+    app: gatsby-backroad
+  namespace: small-projects
+spec:
+  ports:
+    - port: 80
+      name: gatsby-backroad
+      targetPort: 80
+  selector:
+    app: gatsby-backroad
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: ingress-gatsby-backroad-websecure
+  namespace: small-projects
+spec:
+  rules:
+    - host: gatsby-backroad.projects.rafsaf.pl
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: gatsby-backroad
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - gatsby-backroad.projects.rafsaf.pl
+      secretName: auth-tls-gatsby-backroad
